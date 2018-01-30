@@ -9,7 +9,7 @@ Gun.chain.path = function(field, cb, opt){
 	opt = opt || {}; opt.path = true;
 	if(gun === gun._.root){if(cb){cb({err: Gun.log("Can't do that on root instance.")})}return gun}
 	if(typeof field === 'string'){
-		tmp = field.split(opt.split || '.');
+		tmp = field.split(opt.split || '/');
 		if(1 === tmp.length){
 			gun = back.get(field, cb, opt);
 			gun._.opt = opt;
