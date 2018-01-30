@@ -1,10 +1,6 @@
-if(typeof window !== "undefined"){
-  var Gun = window.Gun;
-} else { 
-  var Gun = require('gun/gun');
-}
+module.exports = path;
 
-Gun.chain.path = function(field, cb, opt){
+function path(field, cb, opt){
 	var back = this, gun = back, tmp;
 	opt = opt || {}; opt.path = true;
 	if(gun === gun._.root){if(cb){cb({err: Gun.log("Can't do that on root instance.")})}return gun}
